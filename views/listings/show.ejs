@@ -1,14 +1,14 @@
 <% layout("/layouts/biolerplate") %>
 
 <div class="row mt-3">
-  <div class="col-8 offset-3">
+  <div class="col-8 offset-2">
     <h3><b><%=data.title%></b></h3>
   </div>
 
   <!-- <div class="card col-6 offset-2">
    <div class="show-card mt-3"> -->
   <!-- <div class="card" > //style="width: 18rem" -->
-  <div class="card col-6 offset-3 listing-card" style="width: 32vmax">
+  <div class="card col-6 offset-2 listing-card" style="width: 90vw; max-width: 350px;">
     <img
       src="<%=data.image%>"
       class="card-img-top show-image"
@@ -26,16 +26,16 @@
 
   <%if(currUser && currUser._id.equals(data.owner._id)){ %>
   <div class="btns">
-    <a href="/listings/<%=data._id%>/edit" class="btn btn-dark offset-3 add-btn"
+    <a href="/listings/<%=data._id%>/edit" class="btn btn-dark offset-2 add-btn"
       >Edit</a
     >
 
     <form method="POST" action="/listings/<%=data._id%>?_method=DELETE">
-      <button class="btn btn-dark offset-5">Delete</button>
+      <button class="btn btn-dark offset-4">Delete</button>
     </form>
   </div>
   <% }%>
-  <div class="col-8 offset-3 mb-3">
+  <div class="col-8 offset-2 mb-3">
     <hr />
     <%if(currUser){%>
     <h4>Leave a Review</h4>
