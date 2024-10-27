@@ -43,11 +43,15 @@ module.exports.createListing = async (req, res, next) => {
   // if (!req.body.listing) {
   //   throw new ExpressError(400, "Send Valid Data for Listings");
   // }
+  let Url = req.file.path;
+  let filename = req.file.filename;
+  console.log(Url, "..", filename);
   const newListing = new listing(req.body.listing); // this will access that and will add that to database
   //req.body.listing is in the form of object "new lisiting({})"
   newListing.owner = req.user._id;
+  newListing.image = { Url, filename };
   await newListing.save();
-  // console.log(newListing.owner);
+  console.log(newListing.owner);
   req.flash("success", "New Listing Successfully Created!");
   return res.redirect("/listings");
 };
