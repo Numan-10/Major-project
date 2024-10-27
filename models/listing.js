@@ -10,15 +10,17 @@ const ListingSchema = new Schema({
   },
   description: String,
   image: {
-    type: String,
-    default:
-      " https://images.pexels.com/photos/4428293/pexels-photo-4428293.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1https://images.pexels.com/photos/4428293/pexels-photo-4428293.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    Url:String,
+    filename:String,
+    // default:
+    //   " https://images.pexels.com/photos/4428293/pexels-photo-4428293.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1https://images.pexels.com/photos/4428293/pexels-photo-4428293.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
 
-    //image ha lekin link empty
-    set: (v) =>
-      v === ""
-        ? " https://images.pexels.com/photos/4428293/pexels-photo-4428293.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1https://images.pexels.com/photos/4428293/pexels-photo-4428293.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-        : v,
+    // //image ha lekin link empty
+    // set: (v) =>
+    //   v === ""
+    //     ? " https://images.pexels.com/photos/4428293/pexels-photo-4428293.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1https://images.pexels.com/photos/4428293/pexels-photo-4428293.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    //     : v,
+    
   },
   price: Number,
   location: String,
