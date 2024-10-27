@@ -4,11 +4,16 @@ const listing = require("../models/listing");
 const wrapAsync = require("../utils/wrapAsync.js");
 const { isLoggedIn, isOwner, validateListing } = require("../Middleware.js");
 const listingController = require("../controllers/listing.js");
+const multer = require("multer");
+const { storage } = require("../cloudConfig.js");
+// const upload = multer({ dest: "uploads/" });
+const upload = multer({ storage });
 
 //Router.route for "/" index & Create
 router.route("/").get(wrapAsync(listingController.index)).post(
   isLoggedIn,
-  validateListing, //middleware of validation schema
+  // validateListing, //middleware of validation schema
+  upload.single("listing[image]"),
   wrapAsync(listingController.createListing)
 );
 
