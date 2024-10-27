@@ -10,7 +10,7 @@
   <!-- <div class="card" > //style="width: 18rem" -->
   <div class="card col-6 offset-2 listing-card" style="width: 37vmax ;">
     <img
-      src="<%=data.image%>"
+      src="<%=data.image.Url%>"
       class="card-img-top show-image"
       alt="Listing
       Details"
@@ -30,7 +30,7 @@
       >Edit</a
     >
 
-    <form method="POST" action="/listings/<%=data._id%>?_method=DELETE">
+    <form method="POST" action="/listings/<%=data._id%>?_method=DELETE"> 
       <button class="btn btn-dark offset-4">Delete</button>
     </form>
   </div>
