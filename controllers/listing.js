@@ -26,7 +26,7 @@ module.exports.showListing = async (req, res) => {
     .findById(id)
     .populate({ path: "reviews", populate: { path: "author" } })
     .populate("owner");
-  console.log(data);
+  // console.log(data);
   if (!data) {
     req.flash("error", "Listing you requested for doesn't exist");
     res.redirect("/listings");
@@ -51,7 +51,7 @@ module.exports.createListing = async (req, res, next) => {
   newListing.owner = req.user._id;
   newListing.image = { Url, filename };
   await newListing.save();
-  console.log(newListing.owner);
+  // console.log(newListing.owner);
   req.flash("success", "New Listing Successfully Created!");
   return res.redirect("/listings");
 };
@@ -65,7 +65,11 @@ module.exports.renderEditForm = async (req, res) => {
     req.flash("error", "Listing you requested for doesn't exist");
     res.redirect("/listings");
   }
-  res.render("listings/edit.ejs", { Listing });
+  // console.log(Listing.image.Url);
+  let originalImageUrl = Listing.image.Url;
+  originalImageUrl = originalImageUrl.replace("/upload", "/upload/h_250,w_300");
+  console.log(originalImageUrl)
+  res.render("listings/edit.ejs", { Listing, originalImageUrl });
 };
 
 //Update
@@ -74,7 +78,7 @@ module.exports.updateListing = async (req, res) => {
   let list = await listing.findByIdAndUpdate(id, { ...req.body.listing }); //deconstruct kr k individual parameter me convert kiya
   // const listing = req.body.listings;/
 
-  if (typeof req.file !=="undefined") {
+  if (typeof req.file !== "undefined") {
     let Url = req.file.path;
     let filename = req.file.filename;
     list.image = { Url, filename };
