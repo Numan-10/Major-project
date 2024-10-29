@@ -71,8 +71,15 @@ module.exports.renderEditForm = async (req, res) => {
 //Update
 module.exports.updateListing = async (req, res) => {
   let { id } = req.params;
-  await listing.findByIdAndUpdate(id, { ...req.body.listing }); //deconstruct kr k individual parameter me convert kiya
+  let list = await listing.findByIdAndUpdate(id, { ...req.body.listing }); //deconstruct kr k individual parameter me convert kiya
   // const listing = req.body.listings;/
+
+  if (typeof req.file !=="undefined") {
+    let Url = req.file.path;
+    let filename = req.file.filename;
+    list.image = { Url, filename };
+    await list.save();
+  }
   if (!req.body.listing) {
     throw new ExpressError(400, "Send Valid Data for Listings");
   }

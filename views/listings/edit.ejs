@@ -3,7 +3,13 @@
 <div class="row">
   <div class="col-8 offset-2">
     <h3>Edit Listing</h3>
-    <form method="POST" action="/listings/<%=Listing._id%>?_method=PUT" novalidate class="needs-validation">
+    <form
+      method="POST"
+      action="/listings/<%=Listing._id%>?_method=PUT"
+      novalidate
+      class="needs-validation"
+      enctype="multipart/form-data"
+    >
       <div class="mb-3">
         <label for="title" class="form-label">Title</label>
         <input
@@ -19,28 +25,26 @@
 
       <div class="mb-3">
         <label for="description" class="form-label">Description</label>
-        <textarea name="listing[description]" class="form-control" required >
+        <textarea name="listing[description]" class="form-control" required>
 <%=Listing.description%></textarea
         >
         <div class="invalid-feedback">Description should be valid.</div>
       </div>
 
       <div class="mb-3">
-        <label for="image" class="form-label">Image</label>
+        <label for="image" class="form-label">Upload new Image</label>
         <input
-          type="text"
+          type="file"
           name="listing[image]"
-          value="<%=Listing.image%>"
           class="form-control"
-          required
           
         />
         <div class="invalid-feedback">Enter the valid image link.</div>
       </div>
 
-      <div class="row" >
+      <div class="row">
         <div class="col-md-4">
-          <div class= "mb-3">
+          <div class="mb-3">
             <label for="price" class="form-label">Price</label>
             <input
               type="number"
@@ -53,7 +57,7 @@
           </div>
         </div>
 
-        <div class="col-md-8" >
+        <div class="col-md-8">
           <div>
             <label for="country" class="form-label">Country</label>
             <input
@@ -79,8 +83,7 @@
         />
         <div class="invalid-feedback">Location should be valid</div>
       </div>
- 
-    
+
       <button class="btn btn-dark add-btn">Edit</button><br /><br />
     </form>
   </div>
