@@ -6,7 +6,7 @@ body {
   flex-direction: column;
   min-height: 100vh;
 }
-.container{
+.container {
   flex: 1;
 }
 
@@ -82,22 +82,27 @@ body {
   opacity: 0;
 }
 .card-img-overlay:hover {
-  opacity: .1;
+  opacity: 0.1;
   background-color: white;
 }
 
 /* new page */
-.add-btn{
+.add-btn {
   background-color: #fe424d !important;
   border: none !important;
 }
 
 /* show page */
-.show-image{
-height: 30vh;
+.show-image {
+  height: 30vh;
 }
 
-.btns{
+.btns {
   display: flex;
-  
+}
+
+/* Map */
+#map {
+  height: 400px;
+  width: 100vh;
 }
