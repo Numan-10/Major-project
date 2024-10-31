@@ -52,17 +52,20 @@ module.exports.createListing = async (req, res, next) => {
       limit: 1,
     })
     .send();
-  console.log(response.body.features[0].geometry);
-  res.send("Done!");
+  // console.log(response.body.features[0].geometry);
+  // res.send("Done!");
 
   let Url = req.file.path;
   let filename = req.file.filename;
-  console.log(Url, "..", filename);
+  // console.log(Url, "..", filename);
   const newListing = new listing(req.body.listing); // this will access that and will add that to database
   //req.body.listing is in the form of object "new lisiting({})"
   newListing.owner = req.user._id;
   newListing.image = { Url, filename };
-  await newListing.save();
+  newListing.geometry = response.body.features[0].geometry; //Comming from Map box
+  // console.log(newListing.geometry);
+  let savedListing = await newListing.save();
+  console.log(savedListing);
   // console.log(newListing.owner);
   req.flash("success", "New Listing Successfully Created!");
   return res.redirect("/listings");
@@ -80,7 +83,7 @@ module.exports.renderEditForm = async (req, res) => {
   // console.log(Listing.image.Url);
   let originalImageUrl = Listing.image.Url;
   originalImageUrl = originalImageUrl.replace("/upload", "/upload/h_250,w_300");
-  console.log(originalImageUrl);
+  // console.log(originalImageUrl);
   res.render("listings/edit.ejs", { Listing, originalImageUrl });
 };
 
