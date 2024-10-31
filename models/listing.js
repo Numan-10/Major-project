@@ -10,8 +10,8 @@ const ListingSchema = new Schema({
   },
   description: String,
   image: {
-    Url:String,
-    filename:String,
+    Url: String,
+    filename: String,
     // default:
     //   " https://images.pexels.com/photos/4428293/pexels-photo-4428293.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1https://images.pexels.com/photos/4428293/pexels-photo-4428293.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
 
@@ -20,7 +20,6 @@ const ListingSchema = new Schema({
     //   v === ""
     //     ? " https://images.pexels.com/photos/4428293/pexels-photo-4428293.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1https://images.pexels.com/photos/4428293/pexels-photo-4428293.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     //     : v,
-    
   },
   price: Number,
   location: String,
@@ -34,6 +33,17 @@ const ListingSchema = new Schema({
   owner: {
     type: Schema.Types.ObjectId,
     ref: "User",
+  },
+  geometry: {
+    type: {
+      type: String, 
+      enum: ["Point"], // 'location.type' must be 'Point'
+      required: true,
+    },
+    coordinates: {
+      type: [Number],
+      required: true,
+    },
   },
 });
 
