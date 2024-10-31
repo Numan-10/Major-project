@@ -11,6 +11,6 @@ const map = new mapboxgl.Map({
 
 // console.log(coordinates);
 // Map Marker
-const marker = new mapboxgl.Marker()
+const marker = new mapboxgl.Marker({ color: 'black', rotation: 45 })
   .setLngLat(coordinates) //listing.geometry.coordinates
   .addTo(map);
