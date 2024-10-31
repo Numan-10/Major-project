@@ -1,4 +1,3 @@
-
 mapboxgl.accessToken = mapToken;
 
 const map = new mapboxgl.Map({
@@ -7,5 +6,11 @@ const map = new mapboxgl.Map({
   zoom: 9, // starting zoom
   // center: listing.geometry.coordinates // starting position
   //longitude then latitude
-  center: [77.209, 28.6139], // starting position[lng,lat]
+  center: coordinates, // starting position[lng,lat]
 });
+
+// console.log(coordinates);
+// Map Marker
+const marker = new mapboxgl.Marker()
+  .setLngLat(coordinates) //listing.geometry.coordinates
+  .addTo(map);
