@@ -1,11 +1,80 @@
 <!-- biolerplate code will be added by using this below line -->
 <% layout("/layouts/biolerplate") %> 
+<style>
+  #filters{
+    display: flex;
+    flex-wrap: no-wrap;
+    margin-left: 2rem;
+  }
+  .filter{
+    text-align: center;
+    margin-right: 2rem;
+    margin-top: 1rem;
+    opacity: 0.8;
+  }
+  .filter:hover{
+    opacity: 1;
+  }
+  .filter p{
+    font-size: 0.9rem;
+  }
+
+</style>
+
 <body>
 <ul>
-<h3 class="d-flex justify-content-center">All Listings</h3>
+<!-- <h3 class="d-flex justify-content-center">All Listings</h3> -->
 <!-- <form action="/listings/new" method="GET"> 
     <button>Create New Listings</button></BR>
 </form> -->
+<div id="filters">
+  <div class="filter">
+   <i class="fa-solid fa-fire"></i>
+   <p>Trending</p>
+</div>
+  <div class="filter">
+    <i class="fa-solid fa-bed"></i>
+    <p>Rooms</p>
+  </div>
+  <div class="filter">
+    <i class="fa-solid fa-mountain-city"></i>
+    <p>Iconic cities</p>
+  </div>
+  <div class="filter">
+    <i class="fa-solid fa-mountain"></i>
+    <p>Mountains</p>
+  </div>
+  <div class="filter">
+    <i class="fa-brands fa-fort-awesome"></i>
+    <p>Castles</p>
+  </div>
+  <div class="filter">
+    <i class="fa-solid fa-person-swimming"></i>
+    <p>Amazing pools</p>
+  </div>
+  <div class="filter">
+    <i class="fa-solid fa-campground"></i>
+    <p>Camping</p>
+  </div>
+  <div class="filter">
+    <i class="fa-solid fa-wheat-awn"></i>
+    <p>Farms</p>
+  </div>
+  <div class="filter">
+    <i class="fa-solid fa-person-skiing"></i>
+    <p>Artic</p>
+  </div>
+  <div class="filter">
+    <i class="fa-solid fa-umbrella-beach"></i>
+    <p>Beaches</p>
+  </div>
+  <div class="filter">
+    <i class="fa-solid fa-hotel"></i>
+    <p>Resorts</p>
+  </div>
+ 
+</div>
+
 <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 rows-xs-1 mt-4">
     <% for(let listings of allListings){ %>
 

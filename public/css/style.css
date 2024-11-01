@@ -106,3 +106,13 @@ body {
   height: 350px;
   width: 70vmin;
 }
+
+.fa-globe {
+  font-size: 1.8rem;
+  color: #fe424d;
+  margin-left: 4rem;
+}
+
+.navbar-nav {
+  margin-right: 4rem;
+}
