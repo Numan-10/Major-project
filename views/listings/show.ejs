@@ -1,7 +1,9 @@
 <% layout("/layouts/biolerplate") %>
 <script>
   const mapToken = "<%=process.env.MAP_TOKEN%>";
-  const coordinates = <%- JSON.stringify(data.geometry.coordinates) %>;
+  // const coordinates = <%- JSON.stringify(data.geometry.coordinates) %>;
+  const listing = <%- JSON.stringify(data) %>;
+  console.log("data:", listing);
   // console.log("Coordinates:", coordinates);
 </script>
 
