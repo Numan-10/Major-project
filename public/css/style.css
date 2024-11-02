@@ -116,3 +116,7 @@ body {
 .navbar-nav {
   margin-right: 4rem;
 }
+
+.navbar {
+  box-shadow: 0px -2px 7px black;
+}
