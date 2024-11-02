@@ -1,31 +1,30 @@
 <style>
-  .search-btn{
-  background-color: #fe424d;
-  color: #fff;
-  border-radius: 30px;
-  padding: 0px 12px 0px 12px;
- 
-}
-.search-btn:hover{
-  background-color: hsl(356, 99%, 63%);
-  color: #fff;
-}
-.fa-magnifying-glass{
-  display: inline;
-  margin-right: 5px;
-}
-.search-inp{
-  border-radius: 25px;
-  margin-left: 5rem ;
-  padding: 0.5rem 3rem 0.5rem 3rem;
-}
+  .search-btn {
+    background-color: #fe424d;
+    color: #fff;
+    border-radius: 25px;
+    padding: 0px 10px 0px 10px;
+    font-size: 14px;
+  }
+  .search-btn:hover {
+    background-color: #fe424d;
+    color: #fff;
+  }
+  .fa-magnifying-glass {
+    display: inline;
+    margin-right: 5px;
+  }
+  .search-inp {
+    border-radius: 25px;
+    margin-left: 5rem;
+    padding: 0.5rem 3rem 0.5rem 3rem;
+  }
 </style>
-
-
 <nav class="navbar navbar-expand-md bg-body-light sticky-top">
   <div class="container-fluid">
-    <a class="navbar-brand " href="/listings"
-      ><i class="fa-brands fa-airbnb"></i></a>
+    <a class="navbar-brand" href="/listings"
+      ><i class="fa-brands fa-airbnb"></i
+    ></a>
     <button
       class="navbar-toggler"
       type="button"
@@ -40,14 +39,20 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <div class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="/listings">Explore</a>
+          <a class="nav-link bnb" href="/listings">airbnb</a>
         </li>
       </div>
 
       <div class="navbar-nav ms-auto ml-3">
         <form class="d-flex" role="search">
-          <input class="form-control me-2 search-inp" type="search" placeholder="Search Destinations" >
-          <button class="btn search-btn" type="submit"><i class="fa-solid fa-magnifying-glass"></i>Search</button>
+          <input
+            class="form-control me-2 search-inp"
+            type="search"
+            placeholder="Search Destinations"
+          />
+          <button class="btn search-btn" type="submit">
+            <i class="fa-solid fa-magnifying-glass"></i>Search
+          </button>
         </form>
       </div>
 
@@ -62,7 +67,9 @@
           >
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/login"><strong>Login</strong></a>
+          <a class="nav-link" href="/login"
+            ><strong> <button class="btn btn-success">Login</button></strong></a
+          >
         </li>
         <% }%> <% if(currUser){%>
         <li class="nav-item">

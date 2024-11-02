@@ -1,4 +1,9 @@
 <% layout("/layouts/biolerplate") %>
+<style>
+  .container{
+  padding-left: 0px;
+}
+</style>
 <script>
   const mapToken = "<%=process.env.MAP_TOKEN%>";
   // const coordinates = <%- JSON.stringify(data.geometry.coordinates) %>;
@@ -150,12 +155,14 @@
       </div>
       <%}%>
     </div>
+    <%}%>
+    <hr>
+    <div class="col-6 mb-3">
+      <h3>Where you’ll be</h3>
+      <div id="map"></div>
+    </div>
   </div>
-  <%}%>
-  <div class="col-6 mb-3">
-    <h3>Where you’ll be</h3>
-    <div id="map"></div>
-  </div>
+ 
 </div>
 
 <script src="/js/map.js"></script>
