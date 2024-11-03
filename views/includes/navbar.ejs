@@ -19,7 +19,46 @@
     margin-left: 5rem;
     padding: 0.5rem 3rem 0.5rem 3rem;
   }
+  @media only screen and (max-width: 768px) {
+    .bnb {
+      display: none !important;
+    }
+
+    .navbar-collapse {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100%;
+      background-color: #c58387;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      transition: all 0.3s ease-in;
+      z-index: 1050;
+    }
+    .ALL a {
+      margin-right: 4.5rem;
+      margin-top: 1.5rem;
+    }
+    .Airhome{
+      font-weight: 500;
+    }
+
+    .navbar-collapse.show {
+      z-index: 1040;
+    }
+    .navbar-toggler {
+      z-index: 1050;
+    }
+    .search-inp {
+      width: 10rem;
+      padding-left: 1rem;
+    }
+  }
 </style>
+
 <nav class="navbar navbar-expand-md bg-body-light sticky-top">
   <div class="container-fluid">
     <a class="navbar-brand" href="/listings"
@@ -56,9 +95,9 @@
         </form>
       </div>
 
-      <div class="navbar-nav ms-auto">
+      <div class="navbar-nav ms-auto ALL">
         <li class="nav-item">
-          <a class="nav-link" href="/listings/new">Airbnb your home</a>
+          <a class="nav-link Airhome" href="/listings/new">Airbnb your home</a>
         </li>
         <% if(!currUser){%>
         <li class="nav-item">
