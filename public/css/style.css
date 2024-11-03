@@ -8,6 +8,7 @@ body {
 }
 .container {
   flex: 1;
+  padding-left: 0px;
 }
 
 .navbar {
@@ -180,6 +181,11 @@ body {
   white-space: nowrap;
   min-width: 70px;
 }
-ul {
-  padding: 0px 2px 0px 2px;
+
+.fa-square-facebook:hover, .fa-linkedin:hover {
+  color: rgb(23, 69, 206);
+}
+
+.fa-square-instagram:hover {
+  color: #d6284d;
 }

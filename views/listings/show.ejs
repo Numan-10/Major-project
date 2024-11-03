@@ -1,8 +1,8 @@
 <% layout("/layouts/biolerplate") %>
 <style>
-  .container{
-  padding-left: 0px;
-}
+  .container {
+    padding-left: 0px;
+  }
 </style>
 <script>
   const mapToken = "<%=process.env.MAP_TOKEN%>";
@@ -132,37 +132,37 @@
       <button class="btn btn-outline-dark btn-control">Submit</button>
     </form>
     <hr />
-    <%}%> <%if(data.reviews.length > 0){%>
+    <%}%><% if (data.reviews.length > 0) { %>
     <div class="row">
       <p><b>All Reviews</b></p>
-      <%for(review of data.reviews){%>
-      <div class="card col-5 mt-3 ms-2">
+      <% for (review of data.reviews) { %>
+      <div class="card col-12 col-sm-6 col-md-4 col-lg-3 mt-3">
         <div class="card-body">
-          <h5 class="card-title">@<%=review.author.username%></h5>
+          <h5 class="card-title">@<%= review.author.username %></h5>
           <p
             class="starability-result card-text"
-            data-rating="<%=review.rating%>"
+            data-rating="<%= review.rating %>"
           ></p>
-          <p class="card-text"><%=review.comment%></p>
+          <p class="card-text"><%= review.comment %></p>
           <form
             class="mb-2"
             method="POST"
-            action="/listings/<%=data._id%>/reviews/<%=review._id %>?_method=DELETE"
+            action="/listings/<%= data._id %>/reviews/<%= review._id %>?_method=DELETE"
           >
             <button class="btn btn-sm btn-dark">Delete</button>
           </form>
         </div>
       </div>
-      <%}%>
+      <% } %>
     </div>
-    <%}%>
-    <hr>
+    <% } %>
+
+    <hr />
     <div class="col-6 mb-3">
       <h3>Where you’ll be</h3>
       <div id="map"></div>
     </div>
   </div>
- 
 </div>
 
 <script src="/js/map.js"></script>
