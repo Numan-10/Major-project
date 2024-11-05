@@ -13,6 +13,7 @@ const ejsMate = require("ejs-mate"); //When called anywhere inside a template, r
 const ExpressError = require("./utils/ExpressError.js");
 //we are exporting ListingSchema as a property of an object (module.exports.ListingSchema). This means that when you import it, you need to destructure it:
 const session = require("express-session");
+const MongoStore = require("connect-mongo");
 const flash = require("connect-flash");
 const passport = require("passport");
 const localStrategy = require("passport-local");
@@ -23,7 +24,7 @@ const reviewRouter = require("./routes/review.js");
 const userRouter = require("./routes/user.js");
 
 // const MONGOOSE_URL = "mongodb://127.0.0.1:27017/wanderlust";
-const dbUrl = process.env.ATLASDB_URL; 
+const dbUrl = process.env.ATLASDB_URL;
 
 main()
   .then((res) => {
@@ -61,8 +62,24 @@ app.get("/testListing", async (req, res) => {
 });
 */
 
+//Error on mongo session store
+
+store.on("error", () => {
+  console.log("Error in Mongo Session Store",err);
+});
+
+//Connect-Mongo
+const store = MongoStore.create({
+  mongoUrl: dbUrl,
+  crypto: {
+    secret: process.env.SECRET,
+  },
+  touchAfter: 24 * 3600,
+});
+
 //USING EXPRESS SESSIONS
 sessionOption = {
+  store, //including store in session
   secret: process.env.SECRET,
   resave: false,
   saveUninitialized: true,
