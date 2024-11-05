@@ -62,11 +62,7 @@ app.get("/testListing", async (req, res) => {
 });
 */
 
-//Error on mongo session store
 
-store.on("error", () => {
-  console.log("Error in Mongo Session Store",err);
-});
 
 //Connect-Mongo
 const store = MongoStore.create({
@@ -75,6 +71,11 @@ const store = MongoStore.create({
     secret: process.env.SECRET,
   },
   touchAfter: 24 * 3600,
+});
+//Error on mongo session store
+
+store.on("error", () => {
+  console.log("Error in Mongo Session Store",err);
 });
 
 //USING EXPRESS SESSIONS
