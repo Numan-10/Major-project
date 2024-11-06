@@ -91,9 +91,9 @@ sessionOption = {
   },
 };
 
-// app.get("/", (req, res) => {
-//   res.send("All fine");
-// });
+app.get("/", (req, res) => {
+  res.redirect(301, "/listings")
+});
 
 app.use(session(sessionOption));
 app.use(flash());
