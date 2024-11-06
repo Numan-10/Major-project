@@ -27,6 +27,13 @@ Welcome to the **Airbnb Clone**! This project captures the core functionalities 
 
 ---
 
+## 📸 Screenshots
+
+![Homepage of Airbnb Clone](./screenshots/Screenshot%202024-11-06%20190238.png)
+![Listings page showcasing properties](./screenshots/Screenshot%202024-11-06%20190324.png)
+![Map displaying listings with location markers](./screenshots/./Screenshot%202024-11-06%20190439.png)
+
+---
 ## ⭐ Connect
 
 Interested in discussing this project, offering feedback, or collaborating on new ideas? Reach out—I'd love to connect! 
