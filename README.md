@@ -1,8 +1,8 @@
-# 🏠 Airbnb Clone
+# 🏠 Wanderlust
 
 **Live Link**: [Explore the Project Here!](https://wanderlust-gy46.onrender.com/listings)
 
-Welcome to the **Airbnb Clone**! This project captures the core functionalities of Airbnb, enabling users to browse, list, and manage rental properties effortlessly. Crafted with a focus on both functionality and user experience, this clone offers insights into full-stack development for online rental marketplaces.
+Welcome to the **Wanderlust**! This project captures the core functionalites by enabling users to browse, list, and manage rental properties effortlessly. Crafted with a focus on both functionality and user experience, this clone offers insights into full-stack development for online rental marketplaces.
 
 ---
 
@@ -33,7 +33,3 @@ Welcome to the **Airbnb Clone**! This project captures the core functionalities 
 ![Listings page showcasing properties](./screenshots/Screenshot%202024-11-06%20190324.png)
 ![Map displaying listings with location markers](./screenshots/./Screenshot%202024-11-06%20190439.png)
 
----
-## ⭐ Connect
-
-Interested in discussing this project, offering feedback, or collaborating on new ideas? Reach out—I'd love to connect! 
